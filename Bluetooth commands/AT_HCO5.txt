@@ -12,10 +12,10 @@ PROCEDURE for HC05:
 3)Remove TX AND RX
 4)UPLOAD BLANK CODE
 5)Reconnect tx and rx
-6)press and hold the button on the HC-05 and plug the aruino in. 
+6)press and hold the button on the HC-05 and plug the arduino in. 
 Make usre the LED on the HC05 is on then goes off(the first time) then only release.
 7)If blink at 2 seconds interval then yay! In AT mode.
-8)use NL&CR @38400BAUD in the serial plotter to use AT commands!
+8)use NL&CR @38400BAUD in the serial monitor to use AT commands!
 
 The AT commands are as follows:
 AT
