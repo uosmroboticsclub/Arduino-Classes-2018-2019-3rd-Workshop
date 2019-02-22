@@ -1,0 +1,53 @@
+HC06 has 4 pins only.HC05 has 6 pins.
+PROCEDURE for HC06:
+1)CONNECT 
+	VCC--->5V
+	GND--->GND
+	TX---->PIN 2
+	RX---->PIN 3
+2)PLUG IN ARDUINO WITHOUT THE HC06 INTO THE PC.
+3)Upload the code.Wait till finish.
+4)Unplug the arduino from pc.
+5)PLUG IN HC06.
+6)GO TO ARDUINO AT NL&CR @9600BAUD
+7)USE AT commands like usual.
+
+The AT commands are as follows:
+AT
+AT+NAME?
+AT+NAME=ABC123
+AT+PSWD?
+AT+PSWD="1234"
+AT+RESET
+
+//The code is as follows:
+#include <SoftwareSerial.h>
+
+SoftwareSerial btSerial(2, 3); // RX, TX
+/*
+ * Connect pin 2 Arduino to pin TX HC-06 
+ * Connect pin 3 Arduino to pin RX HC-06
+ */
+void setup() {
+
+Serial.begin(9600);
+
+Serial.println("Enter AT commands:");
+
+btSerial.begin(9600);
+
+}
+
+void loop()
+
+{
+
+if (btSerial.available())
+
+Serial.write(btSerial.read());
+
+if (Serial.available())
+
+btSerial.write(Serial.read());
+
+}
